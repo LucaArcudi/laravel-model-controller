@@ -15,12 +15,29 @@
 
 </head>
 
-<body>
+<body class="bg-secondary">
 
-    <main>
-        <h1>
-            Movies
-        </h1>
+    <header class="container-fluid bg-dark pt-3 pb-2 mb-3">
+        <div class="row">
+            <div class="col text-light">
+                <h1>Movies</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="row gy-3">
+            @foreach ($movies as $movie)
+            <div class="card bg-secondary border-0" style="width: 264px; ">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-light bg-dark lh-lg">{{ $movie->original_title }}</li>
+                    <li class="list-group-item text-light bg-dark lh-lg">{{ $movie->nationality }}</li>
+                    <li class="list-group-item text-light bg-dark lh-lg">{{ $movie->date }}</li>
+                    <li class="list-group-item text-light bg-dark lh-lg">{{ $movie->vote }}</li>
+                </ul>
+            </div>
+            @endforeach
+        </div>
     </main>
 
 </body>
